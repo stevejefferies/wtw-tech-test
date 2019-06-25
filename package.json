@@ -1,0 +1,13 @@
+{
+  "name": "selenium-mocha-chai-testing",
+  "scripts": {
+    "test": "node_modules/.bin/mocha Tests/SearchTest.js --timeout 10000"
+  },
+  "private": true,
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chromedriver": "^75.0.0",
+    "mocha": "^6.1.4",
+    "selenium-webdriver": "3.6.0"
+  }
+}
