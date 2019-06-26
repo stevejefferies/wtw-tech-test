@@ -53,3 +53,9 @@ npm run test
 ```
 
 #### Running in a CI environment
+If you wish to run the tests in a CI environment and output the results into a
+xUnit format, you sould use the `test-ci` script:
+```
+cd path/to/repository
+npm run test-ci
+```
