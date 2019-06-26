@@ -1,7 +1,8 @@
 {
   "name": "selenium-mocha-chai-testing",
   "scripts": {
-    "test": "node_modules/.bin/mocha Tests/SearchTest.js --timeout 10000"
+    "test": "node_modules/.bin/mocha specs/search-test-spec.js --timeout 10000",
+    "test-ci": "node_modules/.bin/mocha specs/search-test-spec.js --timeout 10000 --reporter=xunit --reporter-options output=results.xml"
   },
   "private": true,
   "devDependencies": {
