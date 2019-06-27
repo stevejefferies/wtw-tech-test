@@ -1,5 +1,5 @@
 {
-  "name": "selenium-mocha-chai-testing",
+  "name": "WTW Tech Test",
   "scripts": {
     "test": "node_modules/.bin/mocha specs/search-test-spec.js --timeout 10000",
     "test-ci": "node_modules/.bin/mocha specs/search-test-spec.js --timeout 10000 --reporter=xunit --reporter-options output=results.xml"
