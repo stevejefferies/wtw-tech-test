@@ -11,18 +11,20 @@ var driver;
 // Our test
 test.describe('Test', function () {
 
-  test.beforeEach(function() {
+  test.before(function() {
     // Create driver
     driver = new webdriver.Builder().
     withCapabilities(webdriver.Capabilities.chrome()).
     build();
+  });
 
+  test.beforeEach(function() {
     // add cookie to cover GDPR settings
     driver.get('https://www.willistowerswatson.com');
     driver.manage().addCookie({ 'name': 'notice_gdpr_prefs', 'value': '0,1,2:', 'path': '/', 'domain': '.willistowerswatson.com' })
-  });
+  })
 
-  test.afterEach(function() {
+  test.after(function() {
     driver.quit();
   })
 
@@ -32,12 +34,10 @@ test.describe('Test', function () {
     homePage.ensureRegion('Global | English');
 
     homePage.search('test');
-    // check results page loaded
-    driver.wait(until.titleIs('Search - Willis Towers Watson'), 1000);
 
     var searchPage = new SearchPage(driver);
     searchPage.sortByDate();
-    searchPage.filterTransport();
+    searchPage.filterBy('Transportation');
 
     // print list of results
     searchPage.getResults().then(function(results) {
