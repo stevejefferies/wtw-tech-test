@@ -43,17 +43,19 @@ Scenario | Base Currency  | Target Currency | Amount to Convert | Commission? | 
 Note: valid boundary value covered by scenario 1
 
 Query: is there a maximum limit on conversion amount? If so this needs testing
+with additional upper boundary value analysis
 
 **Commission calculations**
 
 Scenario | Base Currency  | Target Currency | Amount to Convert | Commission? | Expected
 -------- | -------------  | --------------- | ----------------- | ----------- | --------
-7        | Pound Sterling | Euro            | 66.66             |  Yes        | 43.328 (rounded to 43.33)
-8        | Pound Sterling | Euro            | 66.67             |  Yes        | 43.3355 (rounded to 43.34)
-9        | Pound Sterling | Euro            | 99.99             |  Yes        | 64.9935 (rounded to 64.99)
+6        | Pound Sterling | Euro            | 66.66             |  Yes        | 43.328 (rounded to 43.33)
+7        | Pound Sterling | Euro            | 66.67             |  Yes        | 43.3355 (rounded to 43.34)
+8        | Pound Sterling | Euro            | 99.99             |  Yes        | 64.9935 (rounded to 64.99)
 9        | Pound Sterling | Euro            | 100.00            |  Yes        | 70
-9        | Pound Sterling | Euro            | 999.99            |  Yes        | 699.993 (rounded to 699.99)
-9        | Pound Sterling | Euro            | 1000.00           |  Yes        | 750
+10       | Pound Sterling | Euro            | 999.99            |  Yes        | 699.993 (rounded to 699.99)
+11       | Pound Sterling | Euro            | 1000.00           |  Yes        | 750
+
 Note: No commission valid conversion scenario covered by scenario 1
 
 **Additional scenarios**
@@ -126,7 +128,7 @@ menus)
 
 ## Part g
 The following issues are observed:
-- The form allows blank currencies rather than defaulting
+- The form allows blank currencies rather than defaulting to a currency
 - Convert button is active even though form is incomplete
 - Typo panel heading "Currency converson" should read "Currency conversion"
 - "Convert" and "Close" button text layout is not consistent

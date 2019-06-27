@@ -9,14 +9,16 @@ support wider front-end automation of the WTW website.
 ## Prerequisites
 
 **Operating System** - although tested on Windows 10 only, this solution should
-work on any operating system which supported by node.js and Chrome.
+work on any operating system which supports by node.js and Chrome.
 
 **Browsers** - this solution targets Chrome as a browser only, you need to have
 Chrome installed. It is recommended that you upgrade to the latest version for
 the release channel you are using. Beta and Canary release channels should work
 provided you are using a compatible version of chromedriver (see installation
-steps).
-
+steps). **Note:** the solution targets Chrome 75 - you need to ensure you are
+using the correct version of chromedriver and update package.json accordingly
+if you are using another version. (see section on Chromedriver below for
+details).
 
 ## Installation
 1. Clone this repository:
@@ -42,6 +44,15 @@ steps).
   from http://chromedriver.chromium.org/downloads
   - extract and ensure the driver executable is on your system path
 
+## Chromedriver
+The version of Chrome must match the version of chromedriver, therefore you must
+do the following to ensure compatibility:
+1. Install the version of Chrome you wish to target
+2. Install the version of chromedriver (download, extract, place on path) which
+matches the version of Chrome you are targetting
+3. Update package.json to update the chromedriver dependency to the same version
+4. Re-run `npm install --save-dev`
+
 
 ## Running Tests
 #### Local running
@@ -54,7 +65,7 @@ npm run test
 
 #### Running in a CI environment
 If you wish to run the tests in a CI environment and output the results into a
-xUnit format, you sould use the `test-ci` script:
+xunit format, you sould use the `test-ci` script:
 ```
 cd path/to/repository
 npm run test-ci
