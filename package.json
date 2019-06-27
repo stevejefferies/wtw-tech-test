@@ -9,6 +9,6 @@
     "chai": "^4.2.0",
     "chromedriver": "^75.0.0",
     "mocha": "^6.1.4",
-    "selenium-webdriver": "3.6.0"
+    "selenium-webdriver": "^3.6.0"
   }
 }
